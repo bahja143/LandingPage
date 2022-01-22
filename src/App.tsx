@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header/Header";
+import UpperBody from "./Components/Body/UpperBody";
+import MiddleBody from "./Components/Body/MiddleBody";
+import LowerBody from "./Components/Body/LowerBody";
+import Footer from "./Components/Footer/Footer";
+import { makeStyles, Container } from "@material-ui/core";
+
+const useStyles = makeStyles(() => (
+  {
+    container: {
+      background:"#e1ddd3"
+    }
+  }));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const classes = useStyles();
+
+  return <> 
+  <Container className={classes.container} maxWidth="xl">
+    <Header/>
+    <UpperBody />
+    <MiddleBody />
+    <LowerBody />
+    <Footer />
+  </Container>
+  </>
 }
 
 export default App;
